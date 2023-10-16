@@ -13,6 +13,13 @@ def print_string(string):
     print(string)
     return string
 
+@app.route('/count/<int:num>')
+def count(num):
+    result = ''
+    for i in range(num):
+        result += str(i) + '<br>'
+    return result
+
 
 
 if __name__ == '__main__':
