@@ -17,8 +17,24 @@ def print_string(string):
 def count(num):
     result = ''
     for i in range(num):
-        result += str(i) + '<br>'
+        result += str(i) + '\n'
     return result
+
+@app.route('/math/<int:num1>/<operation>/<int:num2>')
+def math(num1, operation, num2):
+    if operation == '+':
+        result = num1 + num2
+    elif operation == '-':
+        result = num1 - num2
+    elif operation == '*':
+        result = num1 * num2
+    elif operation == 'div':
+        result = num1 / num2
+    elif operation == '%':
+        result = num1 % num2
+    else:
+        result = 'Invalid operation'
+    return str(result)
 
 
 
